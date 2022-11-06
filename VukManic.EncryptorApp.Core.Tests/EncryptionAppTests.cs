@@ -62,5 +62,13 @@ namespace VukManic.EncryptorApp.Core.Tests
             // act
             _app.Encrypt(_stringToEncypt, string.Empty);
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException), "Key is not valid. Length is not sufficient")]
+        public void EncryptionAppTests_Encrypt_KeyStringInvalid()
+        {
+            // act
+            _app.Encrypt(_stringToEncypt, "INVALID_KEY");
+        }
     }
 }

@@ -21,14 +21,18 @@ public class EncryptionApp
         var key = Encoding.UTF8.GetBytes(keyString);
 
         using var aesAlg = Aes.Create();
+
+        if (!aesAlg.ValidKeySize(keyString.Length))
+        {
+            throw new ArgumentException("Key is not valid. Length is not sufficient", nameof(keyString));
+        }
+
         using var encryptor = aesAlg.CreateEncryptor(key, aesAlg.IV);
         using var msEncrypt = new MemoryStream();
         using (var csEncrypt = new CryptoStream(msEncrypt, encryptor, CryptoStreamMode.Write))
         {
-            using (var swEncrypt = new StreamWriter(csEncrypt))
-            {
-                swEncrypt.Write(stringToEncrypt);
-            }
+            using var swEncrypt = new StreamWriter(csEncrypt);
+            swEncrypt.Write(stringToEncrypt);
         }
 
         var iv = aesAlg.IV;
