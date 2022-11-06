@@ -1,7 +1,7 @@
 namespace VukManic.EncryptorApp.Core.Tests
 {
     [TestClass]
-    public class EncriptionAppTests
+    public class EncryptionAppTests
     {
         [TestInitialize]
         public void TestInitialize()
@@ -10,11 +10,11 @@ namespace VukManic.EncryptorApp.Core.Tests
         }
 
         [TestMethod]
-        public void EncrytporAppTests_HappyPath()
+        public void EncryptionAppTests_HappyPath()
         {
             // assert 
             var stringTest = "STRING_TO_BE_ENCRYPTED";
-            EncriptionApp app = new EncriptionApp();
+            EncryptionApp app = new EncryptionApp();
 
             
             // act
@@ -24,7 +24,7 @@ namespace VukManic.EncryptorApp.Core.Tests
         }
     }
 
-    public class EncriptionApp
+    public class EncryptionApp
     {
         public object Encrypt(string stringTest)
         {
