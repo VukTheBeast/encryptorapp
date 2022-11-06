@@ -1931,6 +1931,16 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XDocument.dll": {}
         }
+      },
+      "VukManic.EncryptorApp.Core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v6.0",
+        "compile": {
+          "bin/placeholder/VukManic.EncryptorApp.Core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/VukManic.EncryptorApp.Core.dll": {}
+        }
       }
     }
   },
@@ -6788,6 +6798,11 @@
         "system.xml.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xdocument.nuspec"
       ]
+    },
+    "VukManic.EncryptorApp.Core/1.0.0": {
+      "type": "project",
+      "path": "../VukManic.EncryptorApp.Core/VukManic.EncryptorApp.Core.csproj",
+      "msbuildProject": "../VukManic.EncryptorApp.Core/VukManic.EncryptorApp.Core.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -6796,6 +6811,7 @@
       "MSTest.TestFramework >= 2.2.8",
       "Microsoft.NET.Test.Sdk >= 17.1.0",
       "Shouldly >= 4.1.0",
+      "VukManic.EncryptorApp.Core >= 1.0.0",
       "coverlet.collector >= 3.1.2"
     ]
   },
@@ -6828,7 +6844,11 @@
       "frameworks": {
         "net6.0": {
           "targetAlias": "net6.0",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\EXT-ManicV\\OneDrive - Reed Elsevier Group ICO Reed Elsevier Inc\\Documents\\Personal\\Projects\\VukManic.EncryptorApp\\VukManic.EncryptorApp.Core\\VukManic.EncryptorApp.Core.csproj": {
+              "projectPath": "C:\\Users\\EXT-ManicV\\OneDrive - Reed Elsevier Group ICO Reed Elsevier Inc\\Documents\\Personal\\Projects\\VukManic.EncryptorApp\\VukManic.EncryptorApp.Core\\VukManic.EncryptorApp.Core.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

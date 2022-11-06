@@ -16,4 +16,8 @@
     <PackageReference Include="Shouldly" Version="4.1.0" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\VukManic.EncryptorApp.Core\VukManic.EncryptorApp.Core.csproj" />
+  </ItemGroup>
+
 </Project>

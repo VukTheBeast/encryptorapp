@@ -23,12 +23,4 @@ namespace VukManic.EncryptorApp.Core.Tests
             // assert
         }
     }
-
-    public class EncryptionApp
-    {
-        public object Encrypt(string stringTest)
-        {
-            throw new NotImplementedException();
-        }
-    }
 }

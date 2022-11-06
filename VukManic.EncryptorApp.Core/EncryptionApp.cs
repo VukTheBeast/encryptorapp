@@ -1,4 +1,4 @@
-namespace VukManic.EncryptorApp.Core.Tests;
+namespace VukManic.EncryptorApp.Core;
 
 public class EncryptionApp
 {
