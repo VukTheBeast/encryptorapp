@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32922.545
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VukManic.EncryptorApp", "VukManic.EncryptorApp\VukManic.EncryptorApp.csproj", "{E0B114FD-D73C-4A33-BA99-269DA4B25F30}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VukManic.EncryptorApp.Core", "VukManic.EncryptorApp.Core\VukManic.EncryptorApp.Core.csproj", "{32433E2B-FB5C-4923-B84D-A808D0C3C72A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VukManic.EncryptorApp.Core.Tests", "VukManic.EncryptorApp.Core.Tests\VukManic.EncryptorApp.Core.Tests.csproj", "{88C9910B-CE8D-4719-8FD7-19DB4FA039D2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E0B114FD-D73C-4A33-BA99-269DA4B25F30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E0B114FD-D73C-4A33-BA99-269DA4B25F30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E0B114FD-D73C-4A33-BA99-269DA4B25F30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E0B114FD-D73C-4A33-BA99-269DA4B25F30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{32433E2B-FB5C-4923-B84D-A808D0C3C72A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{32433E2B-FB5C-4923-B84D-A808D0C3C72A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{32433E2B-FB5C-4923-B84D-A808D0C3C72A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{32433E2B-FB5C-4923-B84D-A808D0C3C72A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{88C9910B-CE8D-4719-8FD7-19DB4FA039D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{88C9910B-CE8D-4719-8FD7-19DB4FA039D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{88C9910B-CE8D-4719-8FD7-19DB4FA039D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{88C9910B-CE8D-4719-8FD7-19DB4FA039D2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2F121765-BF39-4641-BF24-E05DF6593B9B}
+	EndGlobalSection
+EndGlobal
