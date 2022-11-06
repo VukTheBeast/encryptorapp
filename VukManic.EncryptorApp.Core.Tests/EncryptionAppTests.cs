@@ -28,5 +28,24 @@ namespace VukManic.EncryptorApp.Core.Tests
             result.ShouldNotBe(stringTest);
             result.ShouldBeOfType<string>();
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException), "String to encrypt should not be empty or null")]
+        public void EncryptionAppTests_Encrypt_NullString()
+        {
+            // act
+            _app.Encrypt(null);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException), "String to encrypt should not be empty or null")]
+        public void EncryptionAppTests_Encrypt_EmptyString()
+        {
+            // assert 
+            var stringTest = string.Empty;
+
+            // act
+            _app.Encrypt(stringTest);
+        }
     }
 }

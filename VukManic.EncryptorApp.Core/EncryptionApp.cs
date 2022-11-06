@@ -8,6 +8,11 @@ public class EncryptionApp
 {
     public object Encrypt(string stringToEncrypt)
     {
+        if (string.IsNullOrWhiteSpace(stringToEncrypt))
+        {
+            throw new ArgumentException("String to encrypt should not be empty or null", nameof(stringToEncrypt));
+        }
+
         var keyString = "E546C8DF278CD5931069B522E695D1Rv";
         var key = Encoding.UTF8.GetBytes(keyString);
 
