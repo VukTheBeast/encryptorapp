@@ -1,3 +1,5 @@
+using Shouldly;
+
 namespace VukManic.EncryptorApp.Core.Tests
 {
     [TestClass]
@@ -21,6 +23,7 @@ namespace VukManic.EncryptorApp.Core.Tests
             var result = app.Encrypt(stringTest);
 
             // assert
+            stringTest.ShouldBeNullOrEmpty();
         }
     }
 }

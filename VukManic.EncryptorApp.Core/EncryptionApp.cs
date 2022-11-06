@@ -4,6 +4,6 @@ public class EncryptionApp
 {
     public object Encrypt(string stringTest)
     {
-        throw new NotImplementedException();
+        return string.Empty;
     }
 }
