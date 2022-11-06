@@ -6,6 +6,8 @@ namespace VukManic.EncryptorApp.Core.Tests
     public class EncryptionAppTests
     {
         private EncryptionApp _app;
+        private readonly string _keyString = "E546C8DF278CD5931069B522E695D1Rv";
+        private readonly string _stringToEncypt = "STRING_TO_BE_ENCRYPTED";
 
         [TestInitialize]
         public void TestInitialize()
@@ -16,16 +18,13 @@ namespace VukManic.EncryptorApp.Core.Tests
         [TestMethod]
         public void EncryptionAppTests_HappyPath()
         {
-            // assert 
-            var stringTest = "STRING_TO_BE_ENCRYPTED";
-            
             // act
-            var result = _app.Encrypt(stringTest);
+            var result = _app.Encrypt(_stringToEncypt, _keyString);
 
             // assert
             result.ShouldNotBeNull();
             result.ShouldNotBe(string.Empty);
-            result.ShouldNotBe(stringTest);
+            result.ShouldNotBe(_stringToEncypt);
             result.ShouldBeOfType<string>();
         }
 
@@ -34,7 +33,7 @@ namespace VukManic.EncryptorApp.Core.Tests
         public void EncryptionAppTests_Encrypt_NullString()
         {
             // act
-            _app.Encrypt(null);
+            _app.Encrypt(null, _keyString);
         }
 
         [TestMethod]
@@ -45,7 +44,23 @@ namespace VukManic.EncryptorApp.Core.Tests
             var stringTest = string.Empty;
 
             // act
-            _app.Encrypt(stringTest);
+            _app.Encrypt(stringTest, _keyString);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException), "Key for encryption should not be empty or null")]
+        public void EncryptionAppTests_Encrypt_KeyStringNull()
+        {
+            // act
+            _app.Encrypt(_stringToEncypt, null);
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException), "Key for encryption should not be empty or null")]
+        public void EncryptionAppTests_Encrypt_KeyStringEmpty()
+        {
+            // act
+            _app.Encrypt(_stringToEncypt, string.Empty);
         }
     }
 }
