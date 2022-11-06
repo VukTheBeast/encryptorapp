@@ -5,10 +5,12 @@ namespace VukManic.EncryptorApp.Core.Tests
     [TestClass]
     public class EncryptionAppTests
     {
+        private EncryptionApp _app;
+
         [TestInitialize]
         public void TestInitialize()
         {
-
+            _app = new EncryptionApp();
         }
 
         [TestMethod]
@@ -16,14 +18,15 @@ namespace VukManic.EncryptorApp.Core.Tests
         {
             // assert 
             var stringTest = "STRING_TO_BE_ENCRYPTED";
-            EncryptionApp app = new EncryptionApp();
-
             
             // act
-            var result = app.Encrypt(stringTest);
+            var result = _app.Encrypt(stringTest);
 
             // assert
-            stringTest.ShouldBeNullOrEmpty();
+            result.ShouldNotBeNull();
+            result.ShouldNotBe(string.Empty);
+            result.ShouldNotBe(stringTest);
+            result.ShouldBeOfType<string>();
         }
     }
 }
