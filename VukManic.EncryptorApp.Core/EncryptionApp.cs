@@ -5,7 +5,7 @@ namespace VukManic.EncryptorApp.Core;
 
 public class EncryptionApp
 {
-    public object Encrypt(string stringToEncrypt, string keyString)
+    public string Encrypt(string stringToEncrypt, string keyString)
     {
         if (string.IsNullOrWhiteSpace(stringToEncrypt))
         {
@@ -16,16 +16,10 @@ public class EncryptionApp
         {
             throw new ArgumentException("Key for encryption should not be empty or null", nameof(keyString));
         }
-
-
+        
         var key = Encoding.UTF8.GetBytes(keyString);
 
         using var aesAlg = Aes.Create();
-
-        if (!aesAlg.ValidKeySize(keyString.Length))
-        {
-            throw new ArgumentException("Key is not valid. Length is not sufficient", nameof(keyString));
-        }
 
         using var encryptor = aesAlg.CreateEncryptor(key, aesAlg.IV);
         using var msEncrypt = new MemoryStream();
@@ -47,17 +41,27 @@ public class EncryptionApp
         return Convert.ToBase64String(result);
     }
 
-    public static string DecryptString(string cipherText, string keyString)
+    public string Decrypt(string cipherText, string keyString)
     {
+        if (string.IsNullOrWhiteSpace(cipherText))
+        {
+            throw new ArgumentException("String to encrypt should not be empty or null", nameof(cipherText));
+        }
+
+        if (string.IsNullOrWhiteSpace(keyString))
+        {
+            throw new ArgumentException("Key for encryption should not be empty or null", nameof(keyString));
+        }
+
         var fullCipher = Convert.FromBase64String(cipherText);
 
         var iv = new byte[16];
-        var cipher = new byte[16];
+        var cipher = new byte[fullCipher.Length - iv.Length];
 
         Buffer.BlockCopy(fullCipher, 0, iv, 0, iv.Length);
-        Buffer.BlockCopy(fullCipher, iv.Length, cipher, 0, iv.Length);
+        Buffer.BlockCopy(fullCipher, iv.Length, cipher, 0, fullCipher.Length - iv.Length);
         var key = Encoding.UTF8.GetBytes(keyString);
-
+        
         using (var aesAlg = Aes.Create())
         {
             using (var decryptor = aesAlg.CreateDecryptor(key, iv))
