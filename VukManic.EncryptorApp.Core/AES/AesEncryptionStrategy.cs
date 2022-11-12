@@ -41,6 +41,11 @@ namespace VukManic.EncryptorApp.Core.AES
             return Convert.ToBase64String(result);
         }
 
+        public string Encrypt(byte[] byteArray, string keyString)
+        {
+            throw new NotImplementedException();
+        }
+
         public string Decrypt(string cipherText, string keyString)
         {
             if (string.IsNullOrWhiteSpace(cipherText))
@@ -81,6 +86,11 @@ namespace VukManic.EncryptorApp.Core.AES
                     return result;
                 }
             }
+        }
+
+        public string Decrypt(byte[] byteArray, string keyString)
+        {
+            throw new NotImplementedException();
         }
     }
 }

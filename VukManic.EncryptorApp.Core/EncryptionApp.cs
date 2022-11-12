@@ -13,6 +13,10 @@ public class EncryptionApp : IEncryptionApp
     }
 
     public string Encrypt(string stringToEncrypt, string keyString) => _encryptionStrategy.Encrypt(stringToEncrypt, keyString);
-    
+
+    public string Encrypt(byte[] byteArray, string keyString) => _encryptionStrategy.Encrypt(byteArray, keyString);
+
     public string Decrypt(string cipherText, string keyString) => _encryptionStrategy.Decrypt(cipherText, keyString);
+
+    public string Decrypt(byte[] byteArray, string keyString) => _encryptionStrategy.Decrypt(byteArray, keyString);
 }
