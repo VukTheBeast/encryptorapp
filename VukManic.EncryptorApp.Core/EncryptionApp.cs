@@ -3,7 +3,7 @@ using System.Text;
 
 namespace VukManic.EncryptorApp.Core;
 
-public class EncryptionApp
+public class EncryptionApp : IEncryptionApp
 {
     private IEncryptionStrategy _encryptionStrategy;
 
