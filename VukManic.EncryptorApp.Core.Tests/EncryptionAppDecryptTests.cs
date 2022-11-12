@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VukManic.EncryptorApp.Core.AES;
 
 namespace VukManic.EncryptorApp.Core.Tests
 {
@@ -17,7 +18,7 @@ namespace VukManic.EncryptorApp.Core.Tests
         [TestInitialize]
         public void TestInitialize()
         {
-            _app = new EncryptionApp();
+            _app = new EncryptionApp(new AesEncryptionStrategy());
             _encryptedString = _app.Encrypt(_stringToEncypt, _keyString);
         }
 

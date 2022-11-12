@@ -1,3 +1,5 @@
+using VukManic.EncryptorApp.Core.AES;
+
 namespace VukManic.EncryptorApp.Core.Tests
 {
     [TestClass]
@@ -10,7 +12,7 @@ namespace VukManic.EncryptorApp.Core.Tests
         [TestInitialize]
         public void TestInitialize()
         {
-            _app = new EncryptionApp();
+            _app = new EncryptionApp(new AesEncryptionStrategy());
         }
 
         [TestMethod]
